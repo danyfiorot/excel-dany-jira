@@ -1,0 +1,98 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT License. -->
+<!-- This file shows how to design a first-run page that provides a welcome screen to the user about the features of the add-in. -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fields Values</title>
+
+    <script type="text/javascript" src="fields-values.js"></script>
+    
+    <!-- Office JavaScript API -->
+    <!-- <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script> -->
+
+    <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui#/. -->
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css"/>
+
+    <!-- Template styles -->
+    <link href="fields-values.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="ms-font-m ms-welcome ms-Fabric">
+    <header class="ms-welcome__header ms-bgColor-neutralLighter">
+        <img width="90" height="90" src="../../assets/danyjira-icon-273.png" alt="Dany Jira" title="Dany Jira" />
+        <h1 class="ms-font-su">Fields Values</h1>
+    </header>
+    <main id="app-body" class="ms-welcome__main" style="display: flex;">
+        <h2 class="ms-font-xl">Please select the field that you want to load.</h2>
+        <select name="fieldsSelector" id="fieldsSelector" multiple style="height:200px;">
+            <option value="projects">Projects</option>
+            <option value="boards">Boards</option>
+            <option value="sprints">Sprints</option>
+            <option value="teams">Teams</option>
+            <option value="epics">Epics</option>
+            <option value="types">Issue Types</option>
+            <option value="users">Users</option>
+            <option value="components">Components</option>
+            <option value="labels">Labels</option>
+            <option value="fields">Custom Fields</option>
+            <option value="versions">Versions</option>
+        </select>
+
+        <ul class="ms-List ms-welcome__features">
+            <li class="ms-ListItem ms-DivButton" id="projects" onclick="selectedField(this);">
+                <i class="ms-Icon ms-Icon--ProjectCollection ms-font-xl"></i>
+                <span class="ms-font-m">Projects</span>
+            </li>
+            <li class="ms-ListItem ms-DivButton" id="boards" onclick="selectedField(this);">
+                <i class="ms-Icon ms-Icon--Boards ms-font-xl"></i>
+                <span class="ms-font-m">Boards</span>
+            </li>
+            <li class="ms-ListItem ms-DivButton" id="sprints" onclick="selectedField(this);">
+                <i class="ms-Icon ms-Icon--Sprint ms-font-xl"></i>
+                <span class="ms-font-m">Sprints</span>
+            </li>
+            <li class="ms-ListItem ms-DivButton" id="teams" onclick="selectedField(this);">
+                <i class="ms-Icon ms-Icon--TeamFavorite ms-font-xl"></i>
+                <span class="ms-font-m">Teams</span>
+            </li>
+            <li class="ms-ListItem ms-DivButton" id="epics" onclick="selectedField(this);">
+                <i class="ms-Icon ms-Icon--LightningBolt ms-font-xl"></i>
+                <span class="ms-font-m">Epics</span>
+            </li>
+            <li class="ms-ListItem ms-DivButton" id="types" onclick="selectedField(this);">
+                <i class="ms-Icon ms-Icon--IssueSolid ms-font-xl"></i>
+                <span class="ms-font-m">Issue Types</span>
+            </li>
+            <li class="ms-ListItem ms-DivButton" id="users" onclick="selectedField(this);">
+                <i class="ms-Icon ms-Icon--UserFollowed ms-font-xl"></i>
+                <span class="ms-font-m">Users</span>
+            </li>
+            <li class="ms-ListItem ms-DivButton" id="components" onclick="selectedField(this);">
+                <i class="ms-Icon ms-Icon--WebComponents ms-font-xl"></i>
+                <span class="ms-font-m">Components</span>
+            </li>
+            <li class="ms-ListItem ms-DivButton" id="labels" onclick="selectedField(this);">
+                <i class="ms-Icon ms-Icon--Label ms-font-xl"></i>
+                <span class="ms-font-m">Labels</span>
+            </li>
+            <li class="ms-ListItem ms-DivButton" id="fields" onclick="selectedField(this);">
+                <i class="ms-Icon ms-Icon--FieldChanged ms-font-xl"></i>
+                <span class="ms-font-m">Custom Fields</span>
+            </li>
+            <li class="ms-ListItem ms-DivButton" id="versions" onclick="selectedField(this);">
+                <i class="ms-Icon ms-Icon--BranchPullRequest ms-font-xl"></i>
+                <span class="ms-font-m">Versions</span>
+            </li>
+        </ul>
+        <div role="button" id="btn_load" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
+            <span class="ms-Button-label">Load</span>
+        </div>
+    </main>
+</body>
+
+</html>
