@@ -8,11 +8,11 @@ function selectedField(field) {
     {
       if (o.selected){
         o.selected = false;
-        field.style.border = '1px solid transparent';
+        field.className = 'ms-ListItem ms-DivButton';
       }
       else{
         o.selected = true;
-        field.style.border = '1px solid #022b4d';
+        field.className = 'ms-ListItem ms-DivButton ms-DivButtonSelected';
       }
     }
   }
