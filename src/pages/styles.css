@@ -38,7 +38,7 @@
     align-items: center;
     -webkit-flex: 1 0 0;
     flex: 1 0 0;
-    padding: 10px 20px;
+    padding: 10px 10px;
  }
  
  .ms-welcome__main > h2 {
@@ -48,9 +48,12 @@
  
  .ms-welcome__features {
      list-style-type: none;
-     margin-top: 20px;
  }
  
+ .ms-welcome__features.ms-List{
+     padding-bottom: 10px;
+ }
+
  .ms-welcome__features.ms-List .ms-ListItem {
      padding-left: 5px;
      padding-top: 5px;
